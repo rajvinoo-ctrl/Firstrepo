@@ -1,0 +1,9 @@
+- name: Update RPM pks on jenkins server
+  hosts: jenkinsvm
+  remote_user: ubuntu
+  become: yes
+  tasks: 
+  - name: Install the package "telent"
+    apt:
+      name: telnet
+      state: present
