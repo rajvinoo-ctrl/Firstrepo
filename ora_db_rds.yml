@@ -1,0 +1,27 @@
+- name: create-oracle-rds
+  hosts: localhost
+  connection: local
+  gather_facts : false
+  tasks: 
+  - name: create RDS instance
+    rds_instance:
+      allocated_storage: 50
+      availability_zone: "eu-north-1a"
+      aws_access_key: "AKIAVBP3NRYPWZTIL2PW"
+      aws_secret_key: "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"
+      db_instance_class: "db.m5.large"
+      db_instance_identifier: "ora-test-rds"
+      db_name: "oradb"
+      db_parameter_group_name: "ora-se-19c"
+      db_subnet_group_name: "my-oradb-subnet"
+      engine: "oracle-se2"
+      license_model: "bring-your-own-license"
+      master_user_password: "Sivam1234"
+      master_username: "dbmaster"
+      max_allocated_storage: 100
+      option_group_name: "ora-option-grp"
+      port: "1521"
+      region: "eu-north-1"
+      state: "present"
+      storage_type: "gp2"
+      vpc_security_group_ids: "sg-0c7b1e00c7901ff2c"
